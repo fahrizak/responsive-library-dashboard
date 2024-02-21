@@ -354,5 +354,13 @@ padding-inline: 1rem;
     padding: 1rem;
   }
 
+  .modal__delete-title{
+    font-size: 19px;
+  }
+
+  .modal__delete-description{
+    font-size: 18px;
+  }
+
 
 }

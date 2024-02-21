@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Table from "../components/Table";
 import Pagination from "../components/Pagination";
 import SelectLimit from "../components/SelectLimit";
@@ -6,48 +6,54 @@ import AddModal from "../components/AddModal"
 import { getBooks, getLength } from "../api";
 
 const DataBuku = () => {
-    const [page, setPage] = useState(1)
-    const [limit, setLimit] = useState(5)
-    const [search, setSearch] = useState('')
+    const [currentPage, setCurrentPage] = useState(1)
+  const [limit, setLimit] = useState(5)
+  const [search, setSearch] = useState("")
 
-    let totalPage = Math.ceil(getLength() / limit)
+  const filteredBooks = getBooks(currentPage, limit, search)
 
-    let pageNo
-    if (page <= totalPage) {
-        pageNo = page
+  let totalPage = Math.ceil(getLength(search) / limit)
+  console.log(totalPage)
+  
+
+  //coba hapus untuk mengetahui fungsinya
+  //auto mengubah page jika user mengganti limit yang halamannya tidak ada, 
+  useEffect(()=> {
+     let pageNo
+    if (currentPage <= totalPage) {
+      pageNo = currentPage
     } else {
-        setPage(totalPage)
-        pageNo = page
+      setCurrentPage(totalPage)
     }
+  },[limit])
 
-    const filteredBooks = getBooks(page, limit)
-        .filter((item) => {
-            const searchTerm = search.toLowerCase()
-            return (
-                searchTerm === '' ||
-                item.judul.toLowerCase().includes(searchTerm) ||
-                item.penerbit.toLowerCase().includes(searchTerm) ||
-                item.tahun_terbit.toString().includes(searchTerm)
-            )
-        })
-
-    function handlePageChange(value) {
-        if (value === "... ") {
-            setPage(1)
-        } else if (value === "leftArrow") {
-            if (page !== 1) {
-                setPage(page - 1)
-            }
-        } else if (value === "rightArrow") {
-            if (page !== totalPage) {
-                setPage(page + 1)
-            }
-        } else if (value === " ...") {
-            setPage(totalPage)
-        } else {
-            setPage(value)
-        }
+  //coba hapus untuk mengetahui fungsinya
+  //agar kembali ke halaman pertama saat user melakukan search
+  useEffect(()=> {
+    if(search.length > 0){
+      setCurrentPage(1)
     }
+  },[search])
+
+
+  function handlePageChange(value) {
+    if (value === "... ") {
+      setCurrentPage(1)
+    } else if (value === "leftArrow") {
+      if (currentPage !== 1) {
+        setCurrentPage(page - 1)
+      }
+    } else if (value === "rightArrow") {
+      if (currentPage !== totalPage) {
+        setCurrentPage(page + 1)
+      }
+    } else if (value === " ...") {
+      setCurrentPage(totalPage)
+    } else {
+      setCurrentPage(value)
+    }
+  }
+
 
     return (
         <div className="book__container">
@@ -72,8 +78,8 @@ const DataBuku = () => {
                 <Table books={filteredBooks} />
 
                 <Pagination
-                    totalPage={totalPage} page={pageNo} limit={limit} siblings={1}
-                    onPageChange={handlePageChange} />
+                    totalPage={totalPage} currentPage={currentPage} limit={limit} siblings={1}
+                    onPageChange={handlePageChange} dataLength={getLength(search)} />
             </div>
         </div>
     );
