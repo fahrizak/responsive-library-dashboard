@@ -10,15 +10,14 @@ const Pagination = ({totalPage, onPageChange, limit, currentPage, siblings, data
     console.log("currentPage : "+currentPage)
     console.log("limit: " + limit)
 
+
+
+
     return (
         <div className="table__footer">
         <div className="tampilkan pagi-none">
             Menampilkan {((currentPage - 1) * limit) + 1} - 
-            {" " +
-
-            (currentPage * limit)
-            
-            +" "} data dari 
+            {` ${ totalPage !== currentPage ?  currentPage * limit : dataLength} `} data dari 
             {" " + dataLength} data
         </div>
 
