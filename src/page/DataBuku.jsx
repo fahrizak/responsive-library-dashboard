@@ -13,11 +13,7 @@ const DataBuku = () => {
   const filteredBooks = getBooks(currentPage, limit, search)
 
   let totalPage = Math.ceil(getLength(search) / limit)
-  console.log(totalPage)
   
-
-  //coba hapus untuk mengetahui fungsinya
-  //auto mengubah page jika user mengganti limit yang halamannya tidak ada, 
   useEffect(()=> {
      let pageNo
     if (currentPage <= totalPage) {
@@ -27,8 +23,6 @@ const DataBuku = () => {
     }
   },[limit])
 
-  //coba hapus untuk mengetahui fungsinya
-  //agar kembali ke halaman pertama saat user melakukan search
   useEffect(()=> {
     if(search.length > 0){
       setCurrentPage(1)

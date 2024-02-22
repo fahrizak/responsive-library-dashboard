@@ -20,6 +20,14 @@ const UpdateModal = () => {
             tahun !== ''
         );
     };
+
+    const handleSubmit = (e) => {
+        if (isFormValid()) {
+            console.log('selamat anda berhasil')
+        } else {
+            e.preventDefault()
+        }
+    }
     return (
         <>
             <div onClick={toggleModal} className="tambah__btn">
@@ -36,7 +44,7 @@ const UpdateModal = () => {
                         <h2 className="modal__edit-title">Tambah Data Buku</h2>
 
                         <div className="form__edit">
-                            <form action="">
+                            <form onSubmit={handleSubmit}>
                                 <label id="judul">Judul Buku <span>*</span></label>
                                 <input type="text" htmlFor="judul"
                                     value={judul}

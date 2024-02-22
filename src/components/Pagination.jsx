@@ -5,14 +5,6 @@ import { returnpaginationRange } from "../utils/appUtils";
 const Pagination = ({totalPage, onPageChange, limit, currentPage, siblings, dataLength}) => {
     let array = returnpaginationRange(totalPage, currentPage, siblings)
 
-    console.log("data length : "+dataLength)
-    console.log("totalPage : "+totalPage)
-    console.log("currentPage : "+currentPage)
-    console.log("limit: " + limit)
-
-
-
-
     return (
         <div className="table__footer">
         <div className="tampilkan pagi-none">
