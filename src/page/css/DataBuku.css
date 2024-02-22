@@ -1,8 +1,8 @@
-.book__container{
+.book__container {
   padding: 4.5rem 1.5rem 0;
 }
 
-.book__content{
+.book__content {
   background-color: #FFFFFF;
   width: 100%;
   overflow-x: auto;
@@ -10,44 +10,45 @@
   border: 1px solid rgb(232, 232, 233);
 }
 
-.book__table{
+.book__table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.book__table th{
+.book__table th {
   text-align: left;
 }
 
-.book__table td, .book__table th {
+.book__table td,
+.book__table th {
   border-top: 1px solid rgb(232, 232, 233);
   border-bottom: 1px solid rgb(232, 232, 233);
   padding: 8px;
 }
 
-.action{
+.action {
   color: #9E9999;
   font-size: 1rem;
 }
 
 .btn__edit,
-.btn__delete{
+.btn__delete {
   cursor: pointer;
 }
 
-.btn__edit{
- margin-right: 12px;
-} 
+.btn__edit {
+  margin-right: 12px;
+}
 
-.btn__edit:hover{
+.btn__edit:hover {
   color: #078AE9;
 }
 
-.btn__delete:hover{
+.btn__delete:hover {
   color: #FF6B00;
 }
 
-.modal, 
+.modal,
 .overlay {
   width: 100vw;
   height: 100vh;
@@ -60,24 +61,24 @@
 }
 
 /* ============= BOOK HEADER ================ */
-.book__header{
+.book__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
 }
 
-.change__limit{
+.change__limit {
   padding: 5px 7px;
   border-radius: 12px;
 }
 
-.book__search{
+.book__search {
   position: relative;
 }
 
 
-.search__input{
+.search__input {
   border-radius: 8px;
   padding: 7px;
   border: none;
@@ -85,7 +86,7 @@
   width: 140px;
 }
 
-.search__icon{
+.search__icon {
   right: 12px;
   top: 8px;
   font-size: 1rem;
@@ -105,13 +106,13 @@
 /*=============== MODAL DELETE ===============*/
 
 
-.modal{
+.modal {
   display: grid;
   place-items: center;
 }
 
-.overlay{
-    background: rgba(49,49,49,0.5);
+.overlay {
+  background: rgba(49, 49, 49, 0.5);
 }
 
 .modal__content {
@@ -124,28 +125,28 @@
   z-index: inherit;
 }
 
-.modal__delete-image{
+.modal__delete-image {
   width: 150px;
   justify-self: center;
 }
 
-.modal__delete-title{
+.modal__delete-title {
   color: black;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-.modal__delete-description{
+.modal__delete-description {
   color: black;
   margin-bottom: 1.5rem;
 }
 
-.modal__delete-button{
+.modal__delete-button {
   display: flex;
   justify-content: space-between;
 }
 
-.modal__delete-no{
+.modal__delete-no {
   padding: 0.5rem 1rem;
   border-radius: 12px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
@@ -154,7 +155,7 @@
   cursor: pointer;
 }
 
-.modal__delete-yes{
+.modal__delete-yes {
   padding: 0.5rem 1rem;
   border-radius: 12px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
@@ -165,7 +166,7 @@
 }
 
 /* ============== MODAL EDIT ============== */
-.form__edit input{
+.form__edit input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -175,7 +176,7 @@
   margin-bottom: 1rem;
 }
 
-.modal__submit{
+.modal__submit {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 12px;
@@ -185,36 +186,36 @@
   font-weight: 600;
 }
 
-.form__edit label{
+.form__edit label {
   color: black;
 }
 
-.modal__edit-button{
+.modal__edit-button {
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
 }
 
-.modal__edit-title{
+.modal__edit-title {
   color: black;
   margin-bottom: 1.5rem;
   cursor: pointer;
   font-size: 24px;
 }
 
-.form__edit label span{
+.form__edit label span {
   color: red;
 }
 
 /* =========== TAMBAH DATA ============*/
-.book__flex{
+.book__flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 
-.tambah__btn{
+.tambah__btn {
   background-color: #0270AF;
   padding: 12px 20px;
   margin-bottom: 1rem;
@@ -226,21 +227,22 @@
   cursor: pointer;
 }
 
-.tambah__btn:hover{
+.tambah__btn:hover {
   background-color: #078AE9;
 }
 
-.tambah__btn i{
+.tambah__btn i {
   font-size: 1.25rem;
 }
 
-.pagi-none{
-    display: none;
-  }
+.pagi-none {
+  display: none;
+}
 
-  .select__limit span{
-    margin-right: 0.5rem;
-  }
+.select__limit span {
+  margin-right: 0.5rem;
+}
+
 
 
 
@@ -248,7 +250,7 @@
 
 /*=============== PAGINATION ===============*/
 
-.pagination{
+.pagination {
   display: flex;
   font-size: .8rem;
   column-gap: 0.25rem;
@@ -257,15 +259,15 @@
   align-items: center;
 }
 
-.pagination span{
-    color: #0270AF;
-    font-weight: 500;
-    font-size: 1rem;
-    margin-inline: 1rem;
-    cursor: pointer;
+.pagination span {
+  color: #0270AF;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-inline: 1rem;
+  cursor: pointer;
 }
 
-.pagination li{
+.pagination li {
   border: 1px solid lightgray;
   width: 2rem;
   height: 2rem;
@@ -275,55 +277,62 @@
   cursor: pointer;
 }
 
-li:hover{
+li:hover {
   background-color: #0270AF;
   color: white;
 }
 
-.active-pagination{
+.active-pagination {
   background-color: #0270AF;
   color: white;
 }
+
+.arrow-none {
+  display: initial;
+}
+
 
 
 
 @media screen and (min-width: 1024px) {
 
 
-.book__container{
-  padding-left: 310px;
-  padding-top: 7rem;
-}
+  .book__container {
+    padding-left: 310px;
+    padding-top: 7rem;
+  }
 
-.action{
+  .action {
     font-size: 1.35rem;
-}
+  }
 
-.table__footer{
-display:flex ;
-justify-content: space-between;
-align-items: center;
-padding-inline: 1rem;
-}
+  .table__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1rem;
+  }
 
-.pagi-none{
+  .pagi-none {
     display: initial;
   }
 
-  .search__input{
+ 
+
+  .search__input {
     width: 200px;
   }
 
-  .form__modal{
+  .form__modal {
     width: 600px;
   }
 
-  .form-button{
-   justify-content: flex-end;
-   column-gap: 1rem;
+  .form-button {
+    justify-content: flex-end;
+    column-gap: 1rem;
   }
 
-  .form__batalkan{
+  .form__batalkan {
     color: #FF6B00;
     font-size: 1rem;
     width: 110px;
@@ -331,16 +340,16 @@ padding-inline: 1rem;
     padding: .85rem;
   }
 
-  .form__submit{
+  .form__submit {
     width: 110px;
     text-align: center;
   }
 
-  .delete__modal{
+  .delete__modal {
     width: 500px;
   }
 
-  .delete__button{
+  .delete__button {
     margin-top: 1.5rem;
     margin-bottom: .5rem;
     justify-content: space-evenly;
@@ -348,19 +357,23 @@ padding-inline: 1rem;
   }
 
   .delete__batalkan,
-  .delete__hapus{
+  .delete__hapus {
     width: 100%;
     text-align: center;
     padding: 1rem;
   }
 
-  .modal__delete-title{
+  .modal__delete-title {
     font-size: 19px;
   }
 
-  .modal__delete-description{
+  .modal__delete-description {
     font-size: 18px;
   }
 
+
+  .pagination .arrow-none {
+    display: none;
+  }
 
 }

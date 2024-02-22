@@ -41,11 +41,11 @@ const DataBuku = () => {
       setCurrentPage(1)
     } else if (value === "leftArrow") {
       if (currentPage !== 1) {
-        setCurrentPage(page - 1)
+        setCurrentPage(currentPage - 1)
       }
     } else if (value === "rightArrow") {
       if (currentPage !== totalPage) {
-        setCurrentPage(page + 1)
+        setCurrentPage(currentPage + 1)
       }
     } else if (value === " ...") {
       setCurrentPage(totalPage)
