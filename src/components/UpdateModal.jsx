@@ -39,7 +39,7 @@ const UpdateModal = () => {
     
                             <div className="modal__edit-button form-button">
                                 <div onClick={toggleModal}className="modal__delete-no form__batalkan">Batalkan</div>
-                                <input type="submit" value="Edit" className="modal__submit form__submit"></input>
+                                <button type="submit" className="modal__submit form__submit">Edit</button>
                             </div>
                         </div>
                     </div>

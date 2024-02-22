@@ -5,6 +5,7 @@
     width: 100%;
     background-color: #FFF;
     border-bottom: 1px solid #E2E2E2;
+    z-index: 2;
 }
 
 .header__container {
