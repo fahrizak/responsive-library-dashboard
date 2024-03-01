@@ -31,7 +31,7 @@ const Header = ({toggle, showIcon}) => {
                <p>{year}</p>
             </div>
 
-            <div className="user__account">
+            <div  onClick={toggleClass} className="user__account">
                <img src={perfil} alt="image" />
 
                <div className="user__data">
@@ -39,7 +39,7 @@ const Header = ({toggle, showIcon}) => {
                   <p className="user__role">Staff Admin</p>
                </div>
 
-               <i onClick={toggleClass} className={`${showMenu} ri-arrow-down-s-line`}></i>
+               <i className={`${showMenu} ri-arrow-down-s-line`}></i>
 
                <ul className={`${showMenu} user__menu`}>
                   <li className="user__profile">

@@ -1,10 +1,11 @@
 import _ from "lodash"
 
 export const returnpaginationRange = (totalPage, currentPage, siblings) => {
-    let totalPageNoInArray = 4 + siblings;
+    let totalPageNoInArray = 6;
     if (totalPageNoInArray >= totalPage) {
         return _.range(1, totalPage + 1);
     }
+
     let leftSiblingsIndex = Math.max(currentPage - siblings, 1);
     let rightSiblingsIndex = Math.min(currentPage + siblings, totalPage);
 

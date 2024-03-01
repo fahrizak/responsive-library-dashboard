@@ -6,28 +6,27 @@ import AddModal from "../components/AddModal"
 import { getBooks, getLength } from "../api";
 
 const DataBuku = () => {
-    const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1)
   const [limit, setLimit] = useState(5)
   const [search, setSearch] = useState("")
 
   const filteredBooks = getBooks(currentPage, limit, search)
 
   let totalPage = Math.ceil(getLength(search) / limit)
-  
-  useEffect(()=> {
-     let pageNo
-    if (currentPage <= totalPage) {
-      pageNo = currentPage
-    } else {
-      setCurrentPage(totalPage)
-    }
-  },[limit])
 
-  useEffect(()=> {
-    if(search.length > 0){
+  useEffect(() => {
+    if (currentPage >= totalPage) {
+      setCurrentPage(totalPage)
+    } else {
+      return
+    }
+  }, [limit])
+
+  useEffect(() => {
+    if (search.length > 0) {
       setCurrentPage(1)
     }
-  },[search])
+  }, [search])
 
 
   function handlePageChange(value) {
@@ -49,34 +48,34 @@ const DataBuku = () => {
   }
 
 
-    return (
-        <div className="book__container">
+  return (
+    <div className="book__container">
 
-            <div className="book__flex">
-                <h2 className="page__title">Data Buku</h2>
-                <AddModal />
-            </div>
+      <div className="book__flex">
+        <h2 className="page__title">Data Buku</h2>
+        <AddModal />
+      </div>
 
-            <div className="book__content">
-                <div className="book__header">
-                    <div className="book__limit">
-                        <SelectLimit onLimitChange={setLimit} />
-                    </div>
+      <div className="book__content">
+        <div className="book__header">
+          <div className="book__limit">
+            <SelectLimit onLimitChange={setLimit} limit={limit} />
+          </div>
 
-                    <div className="book__search">
-                        <input type="text" placeholder="Search ..." onChange={(e) => setSearch(e.target.value)} className="search__input" />
-                        <i className="ri-search-line search__icon"></i>
-                    </div>
-                </div>
-
-                <Table books={filteredBooks} />
-
-                <Pagination
-                    totalPage={totalPage} currentPage={currentPage} limit={limit} siblings={1}
-                    onPageChange={handlePageChange} dataLength={getLength(search)} />
-            </div>
+          <div className="book__search">
+            <input type="text" placeholder="Search ..." onChange={(e) => setSearch(e.target.value)} className="search__input" />
+            <i className="ri-search-line search__icon"></i>
+          </div>
         </div>
-    );
+
+        <Table books={filteredBooks} />
+
+        <Pagination
+          totalPage={totalPage} currentPage={currentPage} limit={limit} siblings={1}
+          onPageChange={handlePageChange} dataLength={getLength(search)} />
+      </div>
+    </div>
+  );
 }
 
 export default DataBuku;

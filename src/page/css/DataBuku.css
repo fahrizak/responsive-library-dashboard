@@ -291,8 +291,59 @@ li:hover {
   display: initial;
 }
 
+/* Select Limit Dropdown */
+.dropdown__tampil{
+  position: relative;
+  padding: .3rem .5rem;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  width: 5.5rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.data__tampil{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .82rem;
+}
+
+.data__tampil i{
+  font-size: 1.3rem;
+}
 
 
+.select__data{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  background-color: white;
+  width: 5.5rem;
+  left: 0;
+  top: 2.3rem;
+  border-radius: 12px;
+  padding: .5rem;
+  display: none;
+}
+
+.select__item{
+  font-size: .82rem;
+  padding: .3rem .2rem;
+  cursor: pointer;
+}
+
+.select__item:hover{
+  background-color: gainsboro;
+  border-radius: 6px;
+}
+
+/* show limit */
+.show-limit{
+  display: initial;
+}
 
 @media screen and (min-width: 1024px) {
 
