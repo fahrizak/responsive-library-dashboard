@@ -42,6 +42,13 @@
   height: 100%;
 }
 
+.sidebar__content{
+  position: relative;
+  height: 100%;
+  margin-bottom: 100px;
+  overflow-y: auto;
+}
+
 .sidebar__title{
   color: gray;
   font-weight: 500;
@@ -83,9 +90,12 @@
 
 .sidebar__account{
   display: flex;
+  position: fixed;
+  bottom: 0;
+  background-color: #FFF;
   align-items: center;
   column-gap: .5rem;
-  margin: 1rem;;
+  padding: 1rem;
 }
 
 .sidebar__name{

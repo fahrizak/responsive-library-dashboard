@@ -3,7 +3,7 @@ import "./css/Dashboard.css"
 
 const Dashboard = () => {
     return ( 
-        <div className="dashboard">
+        <section className="dashboard">
             <h2 className="page__title">Dashboard</h2>
 
             <div className="dashboard__content">
@@ -34,7 +34,7 @@ const Dashboard = () => {
                     </div>
                 </article>
             </div>
-        </div>
+        </section>
      );
 }
  

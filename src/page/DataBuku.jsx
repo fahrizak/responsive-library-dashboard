@@ -49,7 +49,7 @@ const DataBuku = () => {
 
 
   return (
-    <div className="book__container">
+    <section className="book__container">
 
       <div className="book__flex">
         <h2 className="page__title">Data Buku</h2>
@@ -74,7 +74,7 @@ const DataBuku = () => {
           totalPage={totalPage} currentPage={currentPage} limit={limit} siblings={1}
           onPageChange={handlePageChange} dataLength={getLength(search)} />
       </div>
-    </div>
+    </section>
   );
 }
 
